@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  dind:
+    build: .
+    privileged: true
+    volumes:
+      - ./data:/var/lib/docker
+    ports:
+      - "80:2222"
+    environment:
+      USER: dind
+      PASSWORD: dind
